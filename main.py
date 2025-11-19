@@ -1,4 +1,5 @@
 import pygame
+import stats
 
 player_cards = []
 enemy_cards = []
@@ -14,6 +15,9 @@ def draw_all__cards(screen):
         draw_card(screen, (50 + idx * 110, 400), id)
     for idx, id in enumerate(enemy_cards):
         draw_card(screen, (50 + idx * 110, 50), id)
+
+def get_card(id):
+
 
 
 
