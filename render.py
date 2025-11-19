@@ -4,6 +4,7 @@ from PIL import Image, ImageDraw, ImageFont
 def generate_custom_card(health, damage, name, image_path, output_filename="custom_card.png"):
     
     base_path = "assets/cards/base.png"
+    image_path = "assets/cards/images/" + image_path
         
     base_card = Image.open(base_path).convert("RGBA")
     draw = ImageDraw.Draw(base_card)
@@ -13,7 +14,6 @@ def generate_custom_card(health, damage, name, image_path, output_filename="cust
     number_font = ImageFont.truetype("assets/font/Baskervville-Italic-VariableFont_wght.ttf", 100) 
 
     name_y = int(card_height * 0.08)
-    
 
     stat_line_y = int(card_height * 0.78)
     health_x = int(card_width * 0.25)
@@ -21,7 +21,7 @@ def generate_custom_card(health, damage, name, image_path, output_filename="cust
     number_y = int(card_height * 0.88)
 
     image_area_box = (
-        int(card_width * 0.05),   # Left X
+        int(card_width * 0.01),   # Left X
         int(card_height * 0.12),  # Top Y
         int(card_width * 0.95),   # Right X
         int(card_height * 0.65)   # Bottom Y
@@ -52,6 +52,6 @@ if __name__ == '__main__':
         health="15", 
         damage="8", 
         name="The Mighty Python", 
-        image_path="character_art.jpg", 
+        image_path="placeholder.jpg", 
         output_filename="python_hero_card_large_font.png"
     )

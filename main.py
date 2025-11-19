@@ -1,4 +1,5 @@
 import pygame
+import assets.data.stats as stats
 from stats import cards_id_reference
 from render import generate_custom_card
 
