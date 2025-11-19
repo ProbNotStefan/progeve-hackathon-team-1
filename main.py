@@ -38,8 +38,7 @@ def draw_card(screen, position, card_instance):
             health=str(card_instance["hp"]),
             damage=str(card_instance["dmg"]),
             name=card_instance["name"],
-            image_path=f"assets/cards/out/{card_instance['id']}.png",
-            output_filename=card_path
+            base=id
         )
         card_image = pygame.image.load(card_path)
         card_image = pygame.transform.scale(card_image, (100, 150))
