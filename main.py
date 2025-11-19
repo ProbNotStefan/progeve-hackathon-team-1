@@ -17,6 +17,28 @@ def draw_all__cards(screen):
         draw_card(screen, (50 + idx * 110, 50), id)
 
 def get_card(id):
+    return stats.cards_id_reference[id]
+
+def move():
+    for idx, card in enumerate(player_cards):
+        damage = card["dmg"]
+        if enemy_cards:
+            enemy_card = get_card(enemy_cards[idx])
+            enemy_card["hp"] -= damage
+            if enemy_card["hp"] <= 0:
+                enemy_cards.pop(0)
+        if card["hp"] <= 0:
+            player_cards.pop(idx)
+    
+    for idx, card in enumerate(enemy_cards):
+        damage = card["dmg"]
+        if player_cards:
+            player_card = get_card(player_cards[idx])
+            player_card["hp"] -= damage
+            if player_card["hp"] <= 0:
+                player_cards.pop(0)
+        if card["hp"] <= 0:
+            enemy_cards.pop(idx)
 
 
 
