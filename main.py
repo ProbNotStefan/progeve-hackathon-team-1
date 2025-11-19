@@ -23,7 +23,7 @@ def draw_card(screen, position, id):
             health=str(cards_id_reference[id]["hp"]),
             damage=str(cards_id_reference[id]["dmg"]),
             name=cards_id_reference[id]["name"],
-            image_path="assets/cards/default_art.png",
+            image_path=f"assets/cards/{id}.png",
             output_filename=card
         )
         card_image = pygame.image.load(card)
