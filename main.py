@@ -13,8 +13,8 @@ def create_card_instance(id):
     return {
         "id": id,
         "name": base_card["name"],
-        "hp": base_card["hp"],
-        "dmg": base_card["dmg"],
+        "hp": base_card["hp"]*2,
+        "dmg": base_card["dmg"]//2,
         "stars": base_card.get("stars", 0),
         "artifacts": base_card.get("artifacts", [])
     }
