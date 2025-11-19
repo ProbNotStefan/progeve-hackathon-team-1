@@ -19,13 +19,6 @@ def generate_custom_card(health, damage, name, base):
     damage_x = int(card_width * 0.75)
     number_y = int(card_height * 0.88)
 
-    image_area_box = (
-        int(card_width * 0.05),   # Left X
-        int(card_height * 0.12),  # Top Y
-        int(card_width * 0.95),   # Right X
-        int(card_height * 0.65)   # Bottom Y
-    )
-
     draw.text((card_width/2, name_y), name.upper(), fill="#000000", font=title_font, anchor="mm", align="center")
     draw.text((health_x, stat_line_y), "HEALTH", fill="#000000", font=stat_font, anchor="ms", align="center")
     draw.text((damage_x, stat_line_y), "DAMAGE", fill="#000000", font=stat_font, anchor="ms", align="center")
