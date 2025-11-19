@@ -1,9 +1,9 @@
 import os
 from PIL import Image, ImageDraw, ImageFont
 
-def generate_custom_card(health, damage, name, base_path, output_filename="custom_card.png"):
+def generate_custom_card(health, damage, name, base):
 
-    base_path = f"assets/cards/images/{base_path}.png"
+    base_path = f"assets/cards/images/{base}.png"
         
     base_card = Image.open(base_path).convert("RGBA")
     draw = ImageDraw.Draw(base_card)
@@ -32,7 +32,7 @@ def generate_custom_card(health, damage, name, base_path, output_filename="custo
     draw.text((health_x, number_y), health, fill="#000000", font=number_font, anchor="ms", align="center")
     draw.text((damage_x, number_y), damage, fill="#000000", font=number_font, anchor="ms", align="center")
     
-    base_card.save(f'assets/cards/out/{output_filename}')
+    base_card.save(f'assets/cards/out/{base}')
 
 
 if __name__ == '__main__':
@@ -42,6 +42,5 @@ if __name__ == '__main__':
         health="1500", 
         damage="8000", 
         name="The Mighty Python", 
-        base_path=0,
-        output_filename="python_hero_card_large_font.png"
+        base=0,
     )
