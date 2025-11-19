@@ -42,7 +42,7 @@ def generate_custom_card(health, damage, name, image_path, output_filename="cust
     draw.text((health_x, number_y), health, fill="#000000", font=number_font, anchor="ms", align="center")
     draw.text((damage_x, number_y), damage, fill="#000000", font=number_font, anchor="ms", align="center")
     
-    base_card.save(f"assets/cards/out/{output_filename}")
+    base_card.save(output_filename)
 
 
 if __name__ == '__main__':
