@@ -18,8 +18,8 @@ def create_card_instance(id):
         "artifacts": base_card.get("artifacts", [])
     }
 
-player_cards = [create_card_instance(0), create_card_instance(1), create_card_instance(2)]
-enemy_cards = [create_card_instance(3), create_card_instance(4), create_card_instance(5)]
+player_cards = [create_card_instance(0)]
+enemy_cards = [create_card_instance(1)]
 
 
 
@@ -38,13 +38,14 @@ def draw_card(screen, position, card_instance):
             health=str(card_instance["hp"]),
             damage=str(card_instance["dmg"]),
             name=card_instance["name"],
-            base=id
+            base=card_instance["id"],
         )
         card_image = pygame.image.load(card_path)
         card_image = pygame.transform.scale(card_image, (100, 150))
         screen.blit(card_image, position)
 
     pygame.draw.rect(screen, card_color, card_rect)
+
 
 
     
