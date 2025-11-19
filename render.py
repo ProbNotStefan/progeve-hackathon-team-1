@@ -36,11 +36,8 @@ def generate_custom_card(health, damage, name, image_path, output_filename="cust
         custom_img = custom_img.resize((box_width, box_height), Image.Resampling.LANCZOS)
 
         base_card.paste(custom_img, (image_area_box[0], image_area_box[1]), custom_img)
-
-    except FileNotFoundError:
-        print(f"Warning: Image for card not found at {image_path}. Skipping image overlay.")
-    except Exception as e:
-        print(f"Error processing custom image: {e}. Skipping image overlay.")
+    except:
+        pass
 
     draw.text((card_width/2, name_y), name.upper(), fill="#000000", font=title_font, anchor="mm", align="center")
     draw.text((health_x, stat_line_y), "HEALTH", fill="#000000", font=stat_font, anchor="ms", align="center")
@@ -49,7 +46,6 @@ def generate_custom_card(health, damage, name, image_path, output_filename="cust
     draw.text((damage_x, number_y), damage, fill="#000000", font=number_font, anchor="ms", align="center")
     
     base_card.save(output_filename)
-    print(f"Successfully generated card: {output_filename}")
 
 
 if __name__ == '__main__':
