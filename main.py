@@ -1,5 +1,5 @@
 import pygame
-import stats
+import assets.data.stats as stats
 
 player_cards = []
 enemy_cards = []
